@@ -122,8 +122,12 @@ function sendRequest(options) {
                 res.on('data', d => {
                     let buf = Buffer.from(d);
                     let string = buf.toString();
-                    let res = JSON.parse(string);
-                    resolve(res);
+                    try {
+                        let res = JSON.parse(string);
+                        resolve(res);
+                    } catch(error) {
+                        reject(error)
+                    }
                 })
             } else {
                 reject(res.statusCode);
