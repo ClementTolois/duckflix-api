@@ -70,7 +70,7 @@ module.exports = {
             sendRequest(reqOptions).then(res => {
                 resolve(res);
             }).catch(err => {
-                resolve(res);
+                resolve(err);
             })
         })
     },
