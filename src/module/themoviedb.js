@@ -65,7 +65,7 @@ module.exports = {
         return new Promise((resolve) => {
             // * Set options
             let reqOptions = options;
-            reqOptions.path = `/3/search/movie?api_key=${process.env.TMDB_API_KEY}&language=en&query=${req}`;
+            reqOptions.path = `/3/search/movie?api_key=${process.env.TMDB_API_KEY}&language=en&query=${req.split(' ')}`;
             // * Send request
             sendRequest(reqOptions).then(res => {
                 resolve(res);
