@@ -1,0 +1,26 @@
+{
+  "name": "duckflix-api",
+  "version": "0.1.0",
+  "description": "A simple movie api for duckflix",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/clement.t/duckflix-api.git"
+  },
+  "keywords": [
+    "movie",
+    "api"
+  ],
+  "author": "Clément TOLOIS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/clement.t/duckflix-api/issues"
+  },
+  "homepage": "https://gitlab.com/clement.t/duckflix-api#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
