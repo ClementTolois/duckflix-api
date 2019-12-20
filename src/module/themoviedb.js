@@ -48,6 +48,19 @@ module.exports = {
             })
         })
     },
+    discoverMovie(){
+        return new Promise((resolve) => {
+            // * Set options
+            let reqOptions = options;
+            reqOptions.path = `/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en`;
+            // * Send request
+            sendRequest(reqOptions).then(res => {
+                resolve(res);
+            }).catch(err => {
+                resolve(res);
+            })
+        })        
+    },
     keywordSearch(req) {
         return new Promise((resolve) => {
             // * Set options
@@ -66,6 +79,32 @@ module.exports = {
             // * Set options
             let reqOptions = options;
             reqOptions.path = `/3/movie/${req}?api_key=${process.env.TMDB_API_KEY}&language=en&query=${req}`;
+            // * Send request
+            sendRequest(reqOptions).then(res => {
+                resolve(res);
+            }).catch(err => {
+                resolve(res);
+            })
+        })
+    },
+    getMovieReviews(req) {
+        return new Promise((resolve) => {
+            // * Set options
+            let reqOptions = options;
+            reqOptions.path = `/3/movie/${req}/reviews?api_key=${process.env.TMDB_API_KEY}&language=en&query=${req}`;
+            // * Send request
+            sendRequest(reqOptions).then(res => {
+                resolve(res);
+            }).catch(err => {
+                resolve(res);
+            })
+        })
+    },
+    getSimilarMovies(req) {
+        return new Promise((resolve) => {
+            // * Set options
+            let reqOptions = options;
+            reqOptions.path = `/3/movie/${req}/similar?api_key=${process.env.TMDB_API_KEY}&language=en&query=${req}`;
             // * Send request
             sendRequest(reqOptions).then(res => {
                 resolve(res);
