@@ -14,29 +14,31 @@ server.on('connection', (socket) => {
     // ! GET LATEST
     socket.on('getLatest', () => {
         theMovieDB.getLatest().then(res => {
-            socket.emit('getLatest', res)
+            socket.emit('getLatest', res);
         })
     })
     // ! GET POPULAR
     socket.on('getPopular', () => {
         theMovieDB.getPopular().then(res => {
-            socket.emit('getPopular', res)
+            socket.emit('getPopular', res);
         })
     })
     // ! GET TOP RATED
     socket.on('getTopRated', () => {
         theMovieDB.getTopRated().then(res => {
-            socket.emit('getTopRated', res)
+            socket.emit('getTopRated', res);
         })
     })
     // ! KEYWORD SEARCH
     socket.on('keywordSearch',(req) => {
         theMovieDB.keywordSearch(req).then(res => {
-            socket.emit('keywordSearch', res)
+            socket.emit('keywordSearch', res);
         })
     })
     // ! GET MOVIE DETAILS
     socket.on('getMovieDetails', (req) => {
-        
+        theMovieDB.getMovieDetails(req).then(res => {
+            socket.emit('getMovieDetails',res);
+        })
     })
 })
