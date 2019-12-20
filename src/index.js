@@ -35,4 +35,8 @@ server.on('connection', (socket) => {
             socket.emit('keywordSearch', res)
         })
     })
+    // ! GET MOVIE DETAILS
+    socket.on('getMovieDetails', (req) => {
+        
+    })
 })

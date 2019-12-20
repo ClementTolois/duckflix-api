@@ -60,6 +60,19 @@ module.exports = {
                 resolve(res);
             })
         })
+    },
+    getMovieDetails(req) {
+        return new Promise((resolve) => {
+            // * Set options
+            let reqOptions = options;
+            reqOptions.path = `/3/movie/${req}?api_key=${process.env.TMDB_API_KEY}&language=en&query=${req}`;
+            // * Send request
+            sendRequest(reqOptions).then(res => {
+                resolve(res);
+            }).catch(err => {
+                resolve(res);
+            })
+        })
     }
 }
 // ! Private functions
