@@ -4,7 +4,7 @@
   "description": "A simple movie api for duckflix",
   "main": "src/index.js",
   "scripts": {
-    "test": "node src/index.js"
+    "test": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,10 @@
   },
   "homepage": "https://gitlab.com/clement.t/duckflix-api#readme",
   "dependencies": {
-    "colors": "^1.4.0"
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.2",
+    "request": "^2.88.0",
+    "unirest": "^0.6.0"
   }
 }
