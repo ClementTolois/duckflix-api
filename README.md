@@ -80,3 +80,21 @@ socket.once('getSimilarMovies',res => {
     console.log(res);
 })
 ```
+
+### GET GENRE LIST
+> Get movies genre list
+```js
+socket.emit('getGenreList');
+socket.once('getGenreList',res => {
+    console.log(res);
+})
+```
+
+### GET MOVIES BY GENRE
+> Get movies about a genre
+```js
+socket.emit('discoverMoviesByGenre',10);//10 is an genre id
+socket.once('discoverMoviesByGenre',res => {
+    console.log(res);
+})
+```

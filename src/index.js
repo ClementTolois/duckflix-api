@@ -59,4 +59,16 @@ server.on('connection', (socket) => {
             socket.emit('getSimilarMovies', res);
         });
     })
+    // ! GET GENRE LIST
+    socket.on('getGenreList',(req) => {
+        theMovieDB.getGenreList().then(res => {
+            socket.emit('getGenreList', res)
+        });
+    })
+    // ! GET MOVIES BU GENRE
+    socket.on('discoverMoviesByGenre',(req) => {
+        theMovieDB.discoverMoviebyGenre(req).then(res => {
+            socket.emit('discoverMoviesByGenre',res);
+        });
+    })
 })

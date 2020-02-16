@@ -48,6 +48,19 @@ module.exports = {
             })
         })
     },
+    getGenreList(){
+        return new Promise((resolve) => {
+            // * Set options
+            let reqOptions = options;
+            reqOptions.path = `/genre/movie/list?api_key=${process.env.TMDB_API_KEY}&language=en`;
+            // * Send request
+            sendRequest(reqOptions).then(res => {
+                resolve(res);
+            }).catch(err => {
+                resolve(res);
+            })
+        })  
+    },
     discoverMovie(){
         return new Promise((resolve) => {
             // * Set options
@@ -99,6 +112,19 @@ module.exports = {
                 resolve(res);
             })
         })
+    },
+    discoverMoviebyGenre(req){
+        return new Promise((resolve) => {
+            // * Set options
+            let reqOptions = options;
+            reqOptions.path = `/3/discover/movie?api_key=${process.env.TMDB_API_KEY}&language=en&sort_by=popularity.desc&include_adult=false&page=1&with_genres=${req}`;
+            // * Send request
+            sendRequest(reqOptions).then(res => {
+                resolve(res);
+            }).catch(err => {
+                resolve(res);
+            })
+        })  
     },
     getSimilarMovies(req) {
         return new Promise((resolve) => {
