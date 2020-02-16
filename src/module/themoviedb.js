@@ -53,7 +53,7 @@ module.exports = {
             console.log('>>> 2 <<<')
             // * Set options
             let reqOptions = options;
-            reqOptions.path = `/genre/movie/list?api_key=${process.env.TMDB_API_KEY}&language=en`;
+            reqOptions.path = `/3/genre/movie/list?api_key=${process.env.TMDB_API_KEY}&language=en`;
             // * Send request
             sendRequest(reqOptions).then(res => {
                 console.log('>>> 3 <<<')
