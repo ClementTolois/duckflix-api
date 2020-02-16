@@ -61,7 +61,9 @@ server.on('connection', (socket) => {
     })
     // ! GET GENRE LIST
     socket.on('getGenreList',(req) => {
+        console.log('>>> 1 <<<')
         theMovieDB.getGenreList().then(res => {
+            console.log('>>> 5 <<<')
             socket.emit('getGenreList', res)
         });
     })

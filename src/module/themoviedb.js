@@ -50,11 +50,13 @@ module.exports = {
     },
     getGenreList(){
         return new Promise((resolve) => {
+            console.log('>>> 3 <<<')
             // * Set options
             let reqOptions = options;
             reqOptions.path = `/genre/movie/list?api_key=${process.env.TMDB_API_KEY}&language=en`;
             // * Send request
             sendRequest(reqOptions).then(res => {
+                console.log('>>> 4 <<<')
                 resolve(res);
             }).catch(err => {
                 resolve(res);
