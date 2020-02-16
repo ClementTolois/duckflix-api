@@ -18,7 +18,7 @@ module.exports = {
             sendRequest(reqOptions).then(res => {
                 resolve(res);
             }).catch(err => {
-                resolve(res);
+                resolve(err);
             })
         })
     },
@@ -31,7 +31,7 @@ module.exports = {
             sendRequest(reqOptions).then(res => {
                 resolve(res);
             }).catch(err => {
-                resolve(res);
+                resolve(err);
             })
         })
     },
@@ -44,22 +44,22 @@ module.exports = {
             sendRequest(reqOptions).then(res => {
                 resolve(res);
             }).catch(err => {
-                resolve(res);
+                resolve(err);
             })
         })
     },
     getGenreList(){
         return new Promise((resolve) => {
-            console.log('>>> 3 <<<')
+            console.log('>>> 2 <<<')
             // * Set options
             let reqOptions = options;
             reqOptions.path = `/genre/movie/list?api_key=${process.env.TMDB_API_KEY}&language=en`;
             // * Send request
             sendRequest(reqOptions).then(res => {
-                console.log('>>> 4 <<<')
+                console.log('>>> 3 <<<')
                 resolve(res);
             }).catch(err => {
-                resolve(res);
+                resolve(err);
             })
         })  
     },
@@ -98,7 +98,7 @@ module.exports = {
             sendRequest(reqOptions).then(res => {
                 resolve(res);
             }).catch(err => {
-                resolve(res);
+                resolve(err);
             })
         })
     },
@@ -124,7 +124,7 @@ module.exports = {
             sendRequest(reqOptions).then(res => {
                 resolve(res);
             }).catch(err => {
-                resolve(res);
+                resolve(err);
             })
         })  
     },
